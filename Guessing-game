@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    int counter;
+    int input;
+
+    srand(static_cast<unsigned int>(time(NULL)));
+
+    int random = 100 + (rand() % 101);
+
+    for (counter = 1; counter <= 7; counter++) {
+        cout << "Input number: ";
+        cin >> input;
+
+        if (input < random) {
+            cout << "Number too low!" << endl;
+        } else if (input > random) {
+            cout << "Number too high!" << endl;
+        } else { 
+            cout << "You got it right! The number is: " << random << endl;
+            return 0;
+        }
+    }
+
+    cout << "You lost, the correct number was: " << random << endl;
+
+    return 0;
+}
